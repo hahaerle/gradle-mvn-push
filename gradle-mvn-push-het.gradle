@@ -15,6 +15,7 @@
  */
 
 apply plugin: 'maven'
+//becase het is not sigining
 //apply plugin: 'signing'
 
 def isReleaseBuild() {
@@ -43,7 +44,8 @@ afterEvaluate { project ->
     uploadArchives {
         repositories {
             mavenDeployer {
-                beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+                //becase het is not sigining
+                //beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
                 pom.groupId = GROUP
                 pom.artifactId = POM_ARTIFACT_ID
@@ -62,11 +64,12 @@ afterEvaluate { project ->
                     description POM_DESCRIPTION
                     url POM_URL
 
-                    scm {
+                   //becase het is not connect the third Maven Centeral
+                    /*scm {
                         url POM_SCM_URL
                         connection POM_SCM_CONNECTION
                         developerConnection POM_SCM_DEV_CONNECTION
-                    }
+                    }*/
 
                     licenses {
                         license {
@@ -86,7 +89,7 @@ afterEvaluate { project ->
             }
         }
     }
-
+//becase het is not sigining
     /*signing {
         required { isReleaseBuild() && gradle.taskGraph.hasTask("uploadArchives") }
         sign configurations.archives
