@@ -62,7 +62,8 @@ afterEvaluate { project ->
                     name POM_NAME
                     packaging POM_PACKAGING
                     description POM_DESCRIPTION
-                    url POM_URL
+                    //annotation
+                    //url POM_URL
 
                    //becase het is not connect the third Maven Centeral
                     /*scm {
