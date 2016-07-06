@@ -65,7 +65,7 @@ afterEvaluate { project ->
                     //annotation
                     //url POM_URL
 
-                   //becase het is not connect the third Maven Centeral
+                    //becase het is not connect the third Maven Centeral
                     /*scm {
                         url POM_SCM_URL
                         connection POM_SCM_CONNECTION
@@ -102,17 +102,14 @@ afterEvaluate { project ->
         source = android.sourceSets.main.java.srcDirs
         classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
     }
-
     task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
         classifier = 'javadoc'
         from androidJavadocs.destinationDir
     }
-
     task androidSourcesJar(type: Jar) {
         classifier = 'sources'
         from android.sourceSets.main.java.sourceFiles
     }
-
     artifacts {
         archives androidSourcesJar
         archives androidJavadocsJar
